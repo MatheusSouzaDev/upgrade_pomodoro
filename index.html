@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Pomodoro</title>
+    <link rel="stylesheet" href="src/css/design.css">
+</head>
+<body>
+    <main>
+        <div class="top"></div>
+
+        <div>
+            <div id="borderSection" class="border" style="--i:0;">
+                <div class="cube">
+                    <div class="lcube">
+                        <div class="dot dotSection"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <span id="section">1 / 4</span>
+                            <p>sessões</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="borderPercent" class="border" style="--i:1;">
+                <div class="cube">
+                    <div class="lcube">
+                        <div class="dot dotPercent"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <span id="percent">100%</span>
+                            <p>concluido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="borderSeconds" class="border" style="--i:2;">
+                <div class="cube">
+                    <div class="lcube">
+                        <div class="dot dotSeconds"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <span id="seconds">00</span>
+                            <p>seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="borderMinutes" class="border" style="--i:3;">
+                <div class="cube">
+                    <div class="lcube">
+                        <div class="dot dotMinutes"></div>
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <span id="minutes">30</span>
+                            <p>minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="src/js/stopwatch.js"></script>
+</body>
+</html>

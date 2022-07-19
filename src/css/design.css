@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --section: #6c8ead;
+    --minutes: #aabd8c;
+    --percent: #e85e48;
+    --seconds: #226f54;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: #151515;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 300px;
+    height: 300px;
+    
+    transform-style: preserve-3d;
+    animation: rotate 10s linear infinite;
+
+    position: relative;
+}
+
+main .top{
+    width: 100%;
+    height: 100%;
+
+    background-color:#151515;
+
+    transform: rotateX(90deg) translateZ(150px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+main .top::before{
+    content:"";
+    width: 100%;
+    height: 100%;
+
+    background-color: #0f0;
+    
+    box-shadow: 
+    0 0 120px rgba(0, 255, 0, .2),
+    0 0 200px rgba(0, 255, 0, .4),
+    0 0 300px rgba(0, 255, 0, .6),
+    0 0 400px rgba(0, 255, 0, .8),
+    0 0 500px rgba(0, 255, 0, 1);
+    transform:translateZ(-380px);
+    filter:blur(20px);
+
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+main div{
+    width: 100%;
+    height: 100%;
+    
+    transform-style: preserve-3d;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+main div .border{
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(#151515,#00ec00);
+    
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main div .border .cube{
+    width: 170px;
+    height: 170px;
+
+    background-color: #151515;
+
+    border-radius: 50%;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main div .border .cube .lcube{
+    width: 150px;
+    height: 150px;
+
+    position: relative;
+}
+
+main div .border .cube .lcube svg{
+    width: 150px;
+    height: 150px;
+
+    position: relative;
+    transform: rotate(270deg);
+}
+
+main div .border .cube .lcube svg circle{
+    width: 150px;
+    height: 150px;
+
+    fill: transparent;
+    stroke-width: 3;
+    stroke: black;
+
+    transform: translate(5px,5px);
+}
+
+main div .border .cube .lcube svg circle:nth-child(2){
+    stroke-dasharray: 440;
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;
+}
+
+main div #borderSection .cube .lcube svg circle:nth-child(2){
+    stroke: var(--section);
+}
+
+main div #borderPercent .cube .lcube svg circle:nth-child(2){
+    stroke: var(--percent);
+}
+
+main div #borderMinutes .cube .lcube svg circle:nth-child(2){
+    stroke: var(--minutes);
+}
+
+main div #borderSeconds .cube .lcube svg circle:nth-child(2){
+    stroke: var(--seconds);
+}
+
+main div .border .cube .lcube .dot{
+    animation: animateDot 2s linear forwards;
+    
+    position: absolute;
+    z-index: 10;
+}
+
+main div .border .cube .lcube .dot::before{
+    content: "";
+    width:10px;
+    height:10px;
+
+    border-radius: 50%;
+    
+    transform: translateX(-50%);
+
+    position: absolute;
+    left: 50%;
+}
+
+main div #borderSection .cube .lcube .dotSection::before{
+    background-color: var(--section);
+}
+
+main div .border .cube .lcube .dotPercent::before{
+    background-color: var(--percent);
+}
+
+main div #borderMinutes .cube .lcube .dot::before{
+    background-color: var(--minutes);
+}
+
+main div #borderSeconds .cube .lcube .dot::before{
+    background-color: var(--seconds);
+}
+
+main div .border .cube .lcube .number{
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.5s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main div .border .cube .lcube .number span{
+    font-size: 2em;
+    font-weight: 700;
+}
+
+main div #borderSection .cube .lcube .number span{
+    color: var(--section);
+}
+main div #borderPercent .cube .lcube .number span{
+    color: var(--percent);
+}
+main div #borderSeconds .cube .lcube .number span{
+    color: var(--seconds);
+}
+main div #borderMinutes .cube .lcube .number span{
+    color: var(--minutes);
+}
+
+main div .border .cube .lcube .number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(250, 250, 250, 0.75);
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes animateDot{
+    0%{
+        transform: rotate(0deg);
+    }
+}
