@@ -73,7 +73,7 @@ function initialSection() {
     dotPercent.style.transform = `rotate(${repeatSection*degreePercent}deg)`
 
     quantSection.innerText = String(repeatSection + "/" + numberSection)
-    quantPercent.innerText = Math.floor(numberPercent / numberSection * repeatSection) + "%"
+    quantPercent.innerText = Math.floor(numberPercent / numberSection * repeatSection - 1) + "%"
 }
 
 function initialTime(clock) {
