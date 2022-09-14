@@ -67,7 +67,7 @@ let degreeSeconds = 360 / 60
 
 function initialSection() {
     borderSection.style.strokeDashoffset = 440 - (440 * repeatSection)/numberSection
-    borderPercent.style.strokeDashoffset = 440 - (440 * repeatSection)/numberSection
+    borderPercent.style.strokeDashoffset = 440 - (440 * (repeatSection-1))/numberSection
 
     dotSection.style.transform = `rotate(${repeatSection*degreeSection}deg)`
     dotPercent.style.transform = `rotate(${(repeatSection-1)*degreePercent}deg)`
