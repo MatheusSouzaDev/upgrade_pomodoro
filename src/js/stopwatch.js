@@ -70,10 +70,10 @@ function initialSection() {
     borderPercent.style.strokeDashoffset = 440 - (440 * repeatSection)/numberSection
 
     dotSection.style.transform = `rotate(${repeatSection*degreeSection}deg)`
-    dotPercent.style.transform = `rotate(${repeatSection*degreePercent}deg)`
+    dotPercent.style.transform = `rotate(${(repeatSection-1)*degreePercent}deg)`
 
     quantSection.innerText = String(repeatSection + "/" + numberSection)
-    quantPercent.innerText = Math.floor(numberPercent / numberSection * repeatSection - 1) + "%"
+    quantPercent.innerText = Math.floor(numberPercent / numberSection * (repeatSection - 1)) + "%"
 }
 
 function initialTime(clock) {
